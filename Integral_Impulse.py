@@ -25,6 +25,7 @@ def area(x, y):
     for i in range(n-1):
         area = ((y[i] + y[i+1])/2) * dx
         sum_area += area
+        
     return sum_area
 def graph(t,f,a):
     plt.plot(t, f)
@@ -43,9 +44,7 @@ def graph(t,f,a):
         y1= f, 
         color= "b",
         alpha= 0.2)
-
     plt.show()
-
 data = pd.read_csv(str(file_info()))
 #print(data)
 time_data = data["time(s)"].tolist()
