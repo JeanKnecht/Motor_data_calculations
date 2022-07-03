@@ -30,14 +30,14 @@ def graph(t,f,a):
     plt.plot(t, f)
     plt.xlabel("time(s)")
     plt.ylabel("thrust(N)")
-    plt.title("Thrust chart")
+    plt.title("thrust chart")
     plt.grid()
     plt.plot([], [], ' ', label="Area under curve: " + str(a))
     plt.xticks(np.arange(0, max(t), 0.1))
     plt.yticks(np.arange(0, max(f)+1, 1))
     plt.ylim(ymin=0)
     plt.xlim(xmin=0)
-    plt.legend()
+    plt.legend(loc=9, prop={'size': 20})
     plt.fill_between(
         x= t, 
         y1= f, 
