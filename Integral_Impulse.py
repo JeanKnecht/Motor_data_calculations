@@ -2,6 +2,7 @@ from time import time
 import matplotlib.pyplot as plt
 import pandas as pd
 import PySimpleGUI as sg
+import numpy as np
 
 def file_info():
     sg.theme("DarkTeal2")
@@ -32,6 +33,10 @@ def graph(t,f,a):
     plt.title("Thrust chart")
     plt.grid()
     plt.plot([], [], ' ', label="Area under curve: " + str(a))
+    plt.xticks(np.arange(0, max(t), 0.1))
+    plt.yticks(np.arange(0, max(f)+1, 1))
+    plt.ylim(ymin=0)
+    plt.xlim(xmin=0)
     plt.legend()
     plt.fill_between(
         x= t, 
