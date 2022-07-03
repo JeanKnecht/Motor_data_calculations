@@ -10,7 +10,7 @@ files = os.listdir("C:/Users/JeanK/OneDrive/Bureaublad/rocket/Rocket Data/Motor_
 def file_info():
     sg.theme("DarkTeal2")
     layout = [[sg.T("")], [sg.Text("Choose the Data file: "), sg.Input(key="-IN2-" ,change_submits=True), sg.FileBrowse(key="-IN-")],[sg.Button("Submit")]]
-    window = sg.Window('My File Browser', layout, size=(600,150))
+    window = sg.Window('Animated graph', layout, size=(600,150))
     while True:
         event, values = window.read()
         print(values["-IN2-"])
@@ -58,7 +58,7 @@ def graph(t,f,a):
         plt.savefig(f'C:/Users/JeanK/OneDrive/Bureaublad/rocket/Rocket Data/Motor_data_calculations/Animated graph/Images/{i:005}', dpi=100, facecolor = 'white')
         if(i == len(t)-1):
             
-            for x in range(30):
+            for x in range(50):
                 x += len(t)
                 plt.savefig(f'C:/Users/JeanK/OneDrive/Bureaublad/rocket/Rocket Data/Motor_data_calculations/Animated graph/Images/{x:005}', dpi=100, facecolor = 'white')
     plt.close()
@@ -69,7 +69,7 @@ def gif():
     for img in img_path:
         images.append(imageio.imread(img))
 
-    imageio.mimwrite('C:/Users/JeanK/OneDrive/Bureaublad/rocket/Rocket Data/Motor_data_calculations/Animated graph/Gif/animated_graph.gif', images, fps = 11)
+    imageio.mimwrite('C:/Users/JeanK/OneDrive/Bureaublad/rocket/Rocket Data/Motor_data_calculations/Animated graph/Gif/animated_graph.gif', images, fps = 20)
 def empty_folder():
     for f in files:
         os.remove("C:/Users/JeanK/OneDrive/Bureaublad/rocket/Rocket Data/Motor_data_calculations/Animated graph/Images/"+f)
